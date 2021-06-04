@@ -1,12 +1,8 @@
 
 
 const {
-    errRollback,
     errServerResponse,
-    successResponse,
-    errUserResponse,
-    dataResponse,
-    successCommit,
+    dataResponse
 } = require('../../function/response/response');
 const axios = require('axios');
 const index = async () => {
@@ -16,8 +12,6 @@ const index = async () => {
         var { data } =result
         console.log(data);
         return await dataResponse('success', data);
-
-        
     } catch (error) {
         console.log(error.message);
           return await errServerResponse(error.message);
